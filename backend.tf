@@ -3,6 +3,5 @@ terraform {
     bucket = "github-actions-terraform-demo-6789"
     key    = "github-actions-terraform-demo.tfstate"
     region = "us-east-2"
-    profile = "sreeniprofile"
   }
 }
