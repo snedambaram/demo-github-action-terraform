@@ -8,8 +8,8 @@ jobs:
   terraform:
     name: 'Terraform'
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_DEPLOY_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESSD_KEY: ${{ secrets.AWS_DEPLOY_SECRET }}
+      AWS_ACCESS_KEY_ID: "${{ secrets.THIRDPARTY_ACCESSKEY }}"
+      AWS_SECRET_ACCESSD_KEY: "${{ secrets.THIRDPARTY_SECRETACCESSKEY }}"
         
     runs-on: ubuntu-latest
     environment: production
@@ -27,6 +27,7 @@ jobs:
           tf_actions_subcommand: 'init'
           tf_actions_working_dir: '.'
           tf_actions_comment: true
+          args: '-var="instance_type=t3.micro"'
                      
       - name: Terrafiorm plan
         uses: hashicorp/terraform-github-actions@master
@@ -35,6 +36,7 @@ jobs:
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: '.'
           tf_actions_comment: true
+          args: '-var="instance_type=t3.micro"'
 
       - name: Terrafiorm plan
         uses: hashicorp/terraform-github-actions@master
@@ -43,3 +45,4 @@ jobs:
            tf_actions_subcommand: 'apply'
            tf_actions_working_dir: '.'
            tf_actions_comment: true
+           args: '-var="instance_type=t3.micro"'
