@@ -9,7 +9,7 @@ jobs:
     name: 'Terraform'
     env:
       AWS_ACCESS_KEY_ID: ${secrets.THIRDPARTY_ACCESSKEY} 
-      AWS_SECRET_ACCESSD_KEY: ${secrets.THIRDPARTY_SECRETACCESSKEY} 
+      AWS_SECRET_ACCESS_KEY: ${secrets.THIRDPARTY_SECRETACCESSKEY} 
         
     runs-on: ubuntu-latest
     environment: production
