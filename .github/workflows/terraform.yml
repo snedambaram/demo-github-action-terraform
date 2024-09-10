@@ -38,7 +38,7 @@ jobs:
           tf_actions_comment: true
           args: '-var="instance_type=t3.micro"'
 
-      - name: Terrafiorm plan
+      - name: Terrafiorm apply
         uses: hashicorp/terraform-github-actions@master
         with:
            tf_actions_version: 0.14.3

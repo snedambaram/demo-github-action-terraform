@@ -19,6 +19,6 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "Sreeni-Terraform-EC2-Instance-New1"
+    Name = "Sreeni-Terraform-EC2-New Instance-1"
   }
 }
